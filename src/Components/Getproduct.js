@@ -6,18 +6,17 @@ function Getproduct(path, method) {
 	const [response, setResponse] = React.useState(null);
 	const [loading, setLoading] = React.useState(true);
 	const LINK = API + path;
-	//console.log(path);
+	//console.log(LINK);
 	React.useEffect(() => {
 		axios(LINK, {
 			method,
-			//...(body ? { body } : {}),
 			headers: {
 				Accept: "application/json",
 				"Content-Type": "application/json",
 			},
 		})
 			.then((response) => {
-				console.log(response);
+				//console.log(response);
 				//	if (!signal.aborted) {
 				setResponse(response.data);
 				setLoading(false);

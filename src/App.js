@@ -1,52 +1,58 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./Components/Home";
-import Details from "./Components/Details";
 import Signup from "./Components/Signup";
+import Navbar from "./Components/Navbar";
+import Menu from "./Components/Menu";
+import Product from "./Components/Products";
 function App() {
 	return (
 		<div>
 			<Router>
-				<nav className="navbar navbar-expand navbar-dark bg-dark">
-					<Link to={"/"} className="navbar-brand">
-						My App
-					</Link>
-
-					<div className="navbar-nav mr-auto">
-						<li className="nav-item">
-							<Link to={"/home"} className="nav-link">
-								Home
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to={"/details"} className="nav-link">
-								Details
-							</Link>
-						</li>
-					</div>
-
-					<div className="navbar-nav ml-auto">
-						<li className="nav-item">
-							<Link to={"/login"} className="nav-link">
-								Login
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to={"/signup"} className="nav-link">
-								Sign Up
-							</Link>
-						</li>
-					</div>
-				</nav>
-				<Switch>
-					<Route exact path={["/", "/home"]} component={Home} />
-					<Route exact path="/details" component={Details} />
-					<Route path="/signup" component={Signup} />
-				</Switch>
+				<Navbar />
+				<Menu />
+				<Route exact path={["/", "/home"]} component={Home} />
+				<Route path="/signup" component={Signup} />
+				<Route path="/:category" component={Product} />
 			</Router>
 		</div>
 	);
 }
 
 export default App;
+/*
+	<li className="nav-item">
+							<Link to={"/details"} className="nav-link">
+								Details
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to={"/products/category/jewelery"} className="nav-link">
+								Jewellery
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to={"/products/category/electronics"} className="nav-link">
+								Electronics
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to={"/products/category/men clothing"} className="nav-link">
+								Men clothing
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								to={"/products/category/women clothing"}
+								className="nav-link"
+							>
+								Women clothing
+							</Link>
+						</li>
+
+							<Route path="/products/category/jewelery" component={Jewellerey} />
+				<Route path="/products/category/electronics" component={Electronics} />
+				<Switch></Switch>
+						*/
