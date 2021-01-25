@@ -6,16 +6,18 @@ import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import Navbar from "./Components/Navbar";
 import Menu from "./Components/Menu";
-import Product from "./Components/Products";
+import Products from "./Components/Products";
+import Product from "./Components/Product";
 function App() {
 	return (
-		<div>
+		<div col-lg-1 col-xs-12>
 			<Router>
 				<Navbar />
 				<Menu />
 				<Route exact path={["/", "/home"]} component={Home} />
 				<Route path="/signup" component={Signup} />
-				<Route path="/:category" component={Product} />
+				<Route path="/:category" component={Products} />
+				<Route path="/:category/:productId" component={Product} />
 			</Router>
 		</div>
 	);

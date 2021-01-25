@@ -10,4 +10,12 @@ function GetProductsWithLimit(size = 0) {
 function GetProductsWithCategory(category) {
 	return Getproduct(`/products/category/${category}`, "GET");
 }
-export { GetProducts, GetProductsWithLimit, GetProductsWithCategory };
+function GetOneProduct(productId) {
+	return Getproduct(`/products/${productId}`, "GET");
+}
+export {
+	GetProducts,
+	GetProductsWithLimit,
+	GetProductsWithCategory,
+	GetOneProduct,
+};

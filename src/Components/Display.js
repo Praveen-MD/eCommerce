@@ -1,25 +1,29 @@
 import React from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, CardGroup } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+
 function Display({ product }) {
 	//console.log(product);
+	const history = useHistory();
+	const navigateUrl = `/${product.category}/${product.id}`;
+	const clickHandler = () => {
+		history.push(navigateUrl);
+	};
 
 	return (
-		<Card
-			className="col-lg-4 col-md-6 col-sm-6 col-xs-12"
-			//style={{ backgroundColor: "red", float: "left" }}
-		>
-			<Card.Img
-				className="card-img-top"
-				src={product.image}
-				alt="No image available"
-				width="280px"
-				height="280px"
-			/>
-			<Card.Body>
-				<h6> {product.title}</h6>
-				<h6> Cost : $ {product.price}</h6>
-			</Card.Body>
-		</Card>
+		<a style={{ cursor: "pointer" }} onClick={clickHandler}>
+			<Card className="card_disp  col-lg-4 col-md-6 col-sm-12">
+				<Card.Img
+					className="card-img-top card_image "
+					src={product.image}
+					alt="No image available"
+				/>
+				<Card.Body>
+					<p> {product.title}</p>
+					<p> Cost : $ {product.price}</p>
+				</Card.Body>
+			</Card>
+		</a>
 	);
 }
 
