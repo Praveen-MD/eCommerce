@@ -5,21 +5,27 @@ import { useHistory } from "react-router-dom";
 function Display({ product }) {
 	//console.log(product);
 	const history = useHistory();
-	const navigateUrl = `/${product.category}/${product.id}`;
+	const navigateUrl = `/products/${product.id}`;
+	//const navigateUrl = ``;
 	const clickHandler = () => {
-		history.push(navigateUrl);
+		history.push(navigateUrl,{ category: product.category });
 	};
 
 	return (
 		<a style={{ cursor: "pointer" }} onClick={clickHandler}>
-			<Card className="card_disp  col-lg-4 col-md-6 col-sm-12">
+			<Card
+				className="card_disp  col-lg-4 col-md-6 col-sm-12  align-items-center "
+				style={{
+					backgroundColor: "white",
+				}}
+			>
 				<Card.Img
 					className="card-img-top card_image "
 					src={product.image}
 					alt="No image available"
 				/>
 				<Card.Body>
-					<p> {product.title}</p>
+					<h6> {product.title}</h6>
 					<p> Cost : $ {product.price}</p>
 				</Card.Body>
 			</Card>

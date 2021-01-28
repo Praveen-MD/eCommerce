@@ -6,7 +6,7 @@ function Getproduct(path, method) {
 	const [response, setResponse] = React.useState(null);
 	const [loading, setLoading] = React.useState(true);
 	const LINK = API + path;
-	//console.log(LINK);
+	console.log(LINK);
 	React.useEffect(() => {
 		axios(LINK, {
 			method,
@@ -27,7 +27,6 @@ function Getproduct(path, method) {
 		//return () => abortController.abort();
 	}, [path, method]);
 	return { response, loading };
-	return <div></div>;
 }
 
 export default Getproduct;

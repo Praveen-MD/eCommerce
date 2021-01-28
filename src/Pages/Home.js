@@ -1,8 +1,7 @@
 import React from "react";
-import spinner from "../assets/ajax-loader.gif";
-import { Container, Card, Spinner } from "react-bootstrap";
-import Getproduct from "./Getproduct";
-import Display from "./Display";
+
+import Getproduct from "../Components/Getproduct";
+import Display from "../Components/Display";
 import Result from "./Result";
 function Home() {
 	const { response: products, loading } = Getproduct(
@@ -12,12 +11,11 @@ function Home() {
 	//console.log(products);
 	const retrievedItems = loading ? (
 		//<img className="spinner" src={spinner} alt="Loading spinner" />
-		<div class="spinner-border" role="status">
-			<span class="sr-only">Loading...</span>
-		</div>
+		<div className="spinner-border spinner" role="status"></div>
 	) : (
 		products.map((product) => <Display product={product} />)
 	);
+	//console.log(retrievedItems);
 	return <Result category="Popular" data={retrievedItems} />;
 }
 

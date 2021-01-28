@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+//import { DropdownButton, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Home from "./Components/Home";
+import Home from "./Pages/Home";
 import Signup from "./Components/Signup";
 import Navbar from "./Components/Navbar";
 import Menu from "./Components/Menu";
-import Products from "./Components/Products";
+import Products from "./Pages/Products";
 import Product from "./Components/Product";
 function App() {
 	return (
-		<div col-lg-1 col-xs-12>
+		<div col-xs-12>
 			<Router>
 				<Navbar />
 				<Menu />
-				<Route exact path={["/", "/home"]} component={Home} />
+				<Route exact path={["/"]} component={Home} />
 				<Route path="/signup" component={Signup} />
 				<Route path="/:category" component={Products} />
 				<Route path="/:category/:productId" component={Product} />

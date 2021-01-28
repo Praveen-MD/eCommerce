@@ -36,14 +36,25 @@ label {
 }
 .card_disp {
 	float: left;
-	width: 280px;
+	width: 300px;
 	height: 400px;
-
-	margin-right: 20px;
-	margin-top: 5px;
-	padding: 10px;
+	margin-left: 10px;
+	margin-right: 13px;
+	margin-top: 20px;
 }
 .card_image {
 	width: 200px;
 	height: 250px;
+}
+.my_container {
+	background-color: wheat;
+	height: 900px;
+	width: 1000px;
+	margin-left: 100px;
+}
+.spinner {
+	display: block;
+	position: fixed;
+	top: 25%;
+	right: 50%;
 }
