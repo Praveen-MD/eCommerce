@@ -1,4 +1,6 @@
 import Getproduct from "./Getproduct";
+//import Getproduct2 from "./Getproduct2";
+
 function GetProducts() {
 	return Getproduct("/products", "GET");
 }

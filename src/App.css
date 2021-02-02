@@ -1,60 +1,99 @@
-label {
-	display: block;
-	margin-top: 10px;
+html {
+	box-sizing: border-box;
+	height: 100%;
 }
-
-.card-container.card {
-	max-width: 350px !important;
-	padding: 40px 40px;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
-
-.card {
-	background-color: #f7f7f7;
-	padding: 20px 25px 30px;
-	margin: 0 auto 25px;
-	margin-top: 50px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+body {
+	background-color: wheat;
 }
-
-.profile-img-card {
-	width: 96px;
-	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-}
-.form-rows {
-	padding-right: 5px;
-	margin: 5px;
+div {
+	margin-left: 5px;
 }
 .card_disp {
-	float: left;
-	width: 300px;
+	width: 340px;
 	height: 400px;
-	margin-left: 10px;
-	margin-right: 13px;
 	margin-top: 20px;
+	margin-right: 20px;
+	float: left;
 }
 .card_image {
-	width: 200px;
+	margin-top: 15px;
+	width: 300px;
 	height: 250px;
+	margin-right: 20px;
+	padding: 20px;
 }
-.my_container {
-	background-color: wheat;
-	height: 900px;
-	width: 1000px;
-	margin-left: 100px;
-}
+
 .spinner {
 	display: block;
 	position: fixed;
 	top: 25%;
 	right: 50%;
+}
+.footer {
+	position: relative;
+	background: black;
+	color: wheat;
+	display: block;
+}
+.gallery {
+	height: 100%;
+	width: 100%;
+	float: left;
+	/*display: flex;
+	align-items: center;
+	justify-content: center;*/
+}
+.product_image {
+	margin-top: 15px;
+	width: 500px;
+	height: 500px;
+	margin-right: 20px;
+}
+.cart {
+	height: 800px;
+	width: 70%;
+
+	padding: 20px;
+}
+.cart-img {
+	display: inline;
+	height: 400px;
+	width: 400px;
+	margin-left: 20px;
+}
+
+.cart-details {
+	height: 500px;
+	width: 600px;
+	float: right;
+	font-size: 6px;
+	margin-top: 40px;
+}
+.cart-title {
+	height: 200px;
+	margin-top: 40px;
+}
+.cart-price {
+	color: orchid;
+	margin-top: 30px;
+	margin-left: 30px;
+	font-weight: bold;
+}
+.cart-price button {
+	width: 150px;
+	height: 100px;
+	background: palegreen;
+	color: red;
+	border: 2px solid black;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 25px;
+}
+.form-allign {
+	margin-top: 10px;
 }

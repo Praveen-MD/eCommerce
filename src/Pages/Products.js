@@ -6,7 +6,7 @@ import Result from "./Result";
 function Products(props) {
 	const { category } = useParams();
 	const { response: products, loading } = GetProductsWithCategory(category);
-	//console.log(products);
+	console.log(products);
 	const retrievedItems = loading ? (
 		<div className="spinner-border spinner" role="status"></div>
 	) : (

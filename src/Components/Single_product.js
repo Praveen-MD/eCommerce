@@ -1,30 +1,38 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Card } from "react-bootstrap";
+
 function Single_product(product) {
+	const history = useHistory();
+	const navigateUrl = `/products/${product.id}`;
+	const clickHandler = () => {
+		history.push(navigateUrl, { category: product.category });
+	};
 	const data = product.data;
-	//console.log(product);
-	//if (data !== null) console.log(product.data.image);
-	//else console.log(data);
 	if (data !== null) {
 		return (
-			<div className=" align-items-center">
-				<Card
-					className="card_disp  col-lg-4 col-md-6 col-sm-12  align-items-center "
-					style={{
-						backgroundColor: "blue",
-					}}
-				>
-					<Card.Img
-						className="card-img-top card_image "
-						//src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+			<div className="cart">
+				<div className="cart-img">
+					<img
+						className="card-img-top product_image "
 						src={product.data.image}
 						alt="No image available"
 					/>
-					<Card.Body>
-						<h6> {product.data.title}</h6>
-						<p> Cost : $ {product.data.price}</p>
-					</Card.Body>
-				</Card>
+				</div>
+				<div className="cart-details">
+					<div>
+						<h3> {product.data.description}</h3>
+					</div>
+				</div>
+				<div className="cart-price">
+					<div>
+						<h2> Cost : $ {product.data.price}</h2>
+					</div>{" "}
+					<button>
+						<i className="fa fa-shopping-cart" style={{ fontSize: "70px" }}></i>{" "}
+						ADD
+					</button>
+				</div>
 			</div>
 		);
 	} else {
@@ -33,21 +41,13 @@ function Single_product(product) {
 }
 
 export default Single_product;
+
 /*
-<Card
-			className="card_disp  col-lg-4 col-md-6 col-sm-12  align-items-center "
-			style={{
-				backgroundColor: "grey",
-			}}
-		>
-			<Card.Img
-				className="card-img-top card_image "
-				//src={product.data.image}
-				alt="No image available"
-			/>
-			<Card.Body>
-				<h6> {product.data.title}</h6>
-				<p> Cost : $ {product.data.price}</p>
-			</Card.Body>
-		</Card>
-            */
+<button>
+						ADD
+						<i
+							style={{ fontSize: "100px", color: "red" }}
+							className="fa fa-shopping-cart"
+						></i>
+					</button>
+					*/

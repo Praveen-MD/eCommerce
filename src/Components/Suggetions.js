@@ -5,7 +5,8 @@ function Result(props) {
 	if (props.category != "Products") {
 		return (
 			<div>
-				<Container>{props.data}</Container>
+				<h2 style={{ marginLeft: "20px", color: "red" }}>{props.message}</h2>
+				<div>{props.data}</div>
 			</div>
 		);
 	}

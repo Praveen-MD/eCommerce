@@ -6,8 +6,10 @@ function Getproduct(path, method) {
 	const [response, setResponse] = React.useState(null);
 	const [loading, setLoading] = React.useState(true);
 	const LINK = API + path;
-	console.log(LINK);
+	//console.log(LINK);
 	React.useEffect(() => {
+		const abortController = new AbortController();
+		const signal = abortController.signal;
 		axios(LINK, {
 			method,
 			headers: {
@@ -17,10 +19,10 @@ function Getproduct(path, method) {
 		})
 			.then((response) => {
 				//console.log(response);
-				//	if (!signal.aborted) {
-				setResponse(response.data);
-				setLoading(false);
-				//	}
+				if (!signal.aborted) {
+					setResponse(response.data);
+					setLoading(false);
+				}
 			})
 			.catch((error) => console.warn("Something gone wrong", error));
 
